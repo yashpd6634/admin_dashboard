@@ -2,15 +2,15 @@ import React from 'react'
 import classes from "./Chart.module.css"
 import { LineChart, Line, XAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
-interface dataObject {
+interface DataObject {
     month: string;
-    "Active User": number;
+    [key: string]: number|string;
 }
 
 interface InputProps {
     // children?: React.ReactElement;
     title: string;
-    data: dataObject[];
+    data: DataObject[];
     dataKey: string;
     grid: boolean;
 }
