@@ -26,18 +26,18 @@ const Sidebar: React.FC = () => {
             <div className={classes.sidebarMenu}>
                 <h3 className={classes.sidebarTitle}>Quick Menu</h3>
                 <ul className={classes.sidebarList}>
-                    {/* <Link to="/users" className={classes.link}> */}
+                    <Link to="/users" className={classes.link}>
                     <li className={classes.sidebarListItem}>
                         <PermIdentity className={classes.sidebarIcon} />
                         Users
                     </li>
-                    {/* </Link> */}
-                    {/* <Link to="/products" className={classes.link}> */}
+                    </Link>
+                    <Link to="/products" className={classes.link}>
                     <li className={classes.sidebarListItem}>
                         <Storefront className={classes.sidebarIcon} />
                         Products
                     </li>
-                    {/* </Link> */}
+                    </Link>
                     <li className={classes.sidebarListItem}>
                     <AttachMoney className={classes.sidebarIcon} />
                     Transactions
