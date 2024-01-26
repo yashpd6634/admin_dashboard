@@ -9,10 +9,12 @@ const Sidebar: React.FC = () => {
             <div className={classes.sidebarMenu}>
                 <h3 className={classes.sidebarTitle}>Dashboard</h3>
                 <ul className={classes.sidebarList}>
+                    <Link to="/" className={classes.link}>
                     <li className={`${classes.sidebarListItem} ${classes.active}`}>
                         <LineStyle className={classes.sidebarIcon} />
                         Home
                     </li>
+                    </Link>
                     <li className={classes.sidebarListItem}>
                         <Timeline className={classes.sidebarIcon} />
                         Analytics
