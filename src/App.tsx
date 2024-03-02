@@ -1,6 +1,6 @@
-import classes from "./App.module.css"
+import classes from "./App.module.css";
 import Sidebar from "./components/sidebar/Sidebar";
-import Topbar from './components/topbar/Topbar';
+import Topbar from "./components/topbar/Topbar";
 import Home from "./page/home/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import UserList from "./page/userList/UserList";
@@ -21,7 +21,7 @@ function App() {
           <Route path="/users" element={<UserList />} />
           <Route path="/user/:userId" element={<User />} />
           <Route path="/newUser" element={<NewUser />} />
-          <Route path="/products" element={<ProductList />} />
+          <Route path="/movies" element={<ProductList />} />
           <Route path="/product/:productId" element={<Product />} />
           <Route path="/newProduct" element={<NewProduct />} />
         </Routes>

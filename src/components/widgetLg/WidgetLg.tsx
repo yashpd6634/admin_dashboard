@@ -1,15 +1,19 @@
-import classes from "./WidgetLg.module.css"
+import classes from "./WidgetLg.module.css";
 
 const WidgetLg = () => {
-
-  const Button = ({type}: {type: string}) => {
-    return <button className={`${classes.widgetLgButton} ${classes[type]}`}>{type}</button>;
-  }
+  const Button = ({ type }: { type: string }) => {
+    return (
+      <button className={`${classes.widgetLgButton} ${classes[type]}`}>
+        {type}
+      </button>
+    );
+  };
 
   return (
     <div className={classes.widgetLg}>
-        <h3 className={classes.widgetLgTitle}>Latest Transactions</h3>
-        <table className={classes.widgetLgTable}>
+      <h3 className={classes.widgetLgTitle}>Latest Transactions</h3>
+      <table className={classes.widgetLgTable}>
+        <tbody>
           <tr className={classes.widgetLgTr}>
             <th className={classes.widgetLgTh}>Customer</th>
             <th className={classes.widgetLgTh}>Date</th>
@@ -76,9 +80,10 @@ const WidgetLg = () => {
               <Button type="Approved" />
             </td>
           </tr>
-        </table>
+        </tbody>
+      </table>
     </div>
-  )
-}
+  );
+};
 
-export default WidgetLg
+export default WidgetLg;
