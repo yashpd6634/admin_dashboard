@@ -48,10 +48,10 @@ const Sidebar: React.FC = () => {
                 Users
               </li>
             </Link>
-            <Link to="/movies" className={classes.link}>
+            <Link to="/videos" className={classes.link}>
               <li className={classes.sidebarListItem}>
                 <PlayCircleOutline className={classes.sidebarIcon} />
-                Movies
+                Videos
               </li>
             </Link>
             <li className={classes.sidebarListItem}>
