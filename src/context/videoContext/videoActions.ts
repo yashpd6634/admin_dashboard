@@ -29,3 +29,13 @@ export const getVideosStart = () => ({
   export const getVideosFailure = () => ({
     type: "GET_VIDEOS_FAILURE",
   });
+export const deleteVideoStart = () => ({
+    type: "DELETE_VIDEO_START",
+  });
+  export const deleteVideoSuccess = (id: string) => ({
+    type: "DELETE_VIDEO_SUCCESS",
+    payload: id,
+  });
+  export const deleteVideoFailure = () => ({
+    type: "DELETE_VIDEO_FAILURE",
+  });

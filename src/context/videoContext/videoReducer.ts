@@ -4,20 +4,23 @@ import { VideosState } from "./videoContext";
 
 export interface ActionType {
   type: string;
-  payload?: VideoOutput[];
+  payload?: VideoOutput[] | string;
 }
 
-export const VideosReducer: Reducer<VideosState, ActionType> = (state: VideosState, action: ActionType) => {
+export const VideosReducer: Reducer<VideosState, ActionType> = (
+  state: VideosState,
+  action: ActionType
+) => {
   switch (action.type) {
     case "GET_VIDEOS_START":
       return {
-        videos: [],
+        videos: [], // Specify the correct type for this property
         isFetching: true,
         error: false,
       };
     case "GET_VIDEOS_SUCCESS":
       return {
-        videos: action.payload,
+        videos: action.payload as VideoOutput[],
         isFetching: false,
         error: false,
       };
@@ -27,7 +30,28 @@ export const VideosReducer: Reducer<VideosState, ActionType> = (state: VideosSta
         isFetching: false,
         error: true,
       };
+    case "DELETE_VIDEO_START":
+      return {
+        ...state,
+        isFetching: true,
+        error: false,
+      };
+    case "DELETE_VIDEO_SUCCESS":
+      return {
+        videos:
+          state.videos?.filter(
+            (video) => video._id !== (action.payload as string)
+          ) ?? [],
+        isFetching: false,
+        error: false,
+      };
+    case "DELETE_VIDEO_FAILURE":
+      return {
+        ...state,
+        isFetching: false,
+        error: true,
+      };
     default:
-      return { ...state };
+      return state;
   }
 };
