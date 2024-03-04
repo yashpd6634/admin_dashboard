@@ -1,5 +1,9 @@
 import axios from "axios";
 import {
+  VideoOutput,
+  createVideoFailure,
+  createVideoStart,
+  createVideoSuccess,
   deleteVideoFailure,
   deleteVideoStart,
   deleteVideoSuccess,
@@ -29,6 +33,27 @@ export const getVideos = async (dispatch: React.Dispatch<ActionType>) => {
   }
 };
 
+export const createVideo = async (
+  video: VideoOutput,
+  dispatch: React.Dispatch<ActionType>
+) => {
+  const userFromLocalStorage = localStorage.getItem("user");
+  const user = (
+    userFromLocalStorage !== null ? JSON.parse(userFromLocalStorage) : null
+  ) as UserOutput | null | undefined;
+
+  dispatch(createVideoStart());
+  try {
+    const res = await axios.post("/videos", video, {
+      headers: {
+        token: "Bearer " + user?.accessToken,
+      },
+    });
+    dispatch(createVideoSuccess(res.data));
+  } catch (err) {
+    dispatch(createVideoFailure());
+  }
+};
 export const deleteVideo = async (
   id: string,
   dispatch: React.Dispatch<ActionType>

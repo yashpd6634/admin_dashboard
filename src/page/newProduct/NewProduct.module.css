@@ -1,39 +1,44 @@
 .newProduct {
-    flex: 4;
-  }
-  
-  .addProductForm {
-    margin-top: 0.625rem;
-  }
-  
-  .addProductItem {
-    width: 15.625rem;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 0.625rem;
-  }
-  
-  .addProductItem > label {
-    color: gray;
-    font-weight: 600;
-    margin-bottom: 0.625rem;
-  }
-  
-  .addProductItem > input {
-    padding: 0.625rem;
-  }
-  
-  .addProductItem > select {
-    padding: 0.625rem;
-  }
-  
-  .addProductButton {
-    margin-top: 0.625rem;
-    padding: 0.4375rem 0.625rem;
-    border: none;
-    border-radius: 0.625rem;
-    background-color: darkblue;
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
-  }
+  flex: 4;
+}
+
+.addProductForm {
+  margin-top: 0.625rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.addProductItem {
+  width: 15.625rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.625rem;
+  padding: 20px;
+}
+
+.addProductItem > label {
+  color: gray;
+  font-weight: 600;
+  margin-bottom: 0.625rem;
+}
+
+.addProductItem > input {
+  padding: 0.625rem;
+}
+
+.addProductItem > select {
+  padding: 0.625rem;
+}
+
+.addProductButton {
+  height: 30px;
+  margin-top: 0.625rem;
+  padding: 0.4375rem 0.625rem;
+  border: none;
+  border-radius: 0.625rem;
+  background-color: darkblue;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  align-self: center;
+}
