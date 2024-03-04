@@ -11,13 +11,15 @@ import {
 import UserList from "./page/userList/UserList";
 import User from "./page/user/User";
 import NewUser from "./page/newUser/NewUser";
-import NewProduct from "./page/newProduct/NewProduct";
 import { Login } from "./page/login/Login";
 import { CSSProperties, Suspense, useContext, useEffect } from "react";
 import ClipLoader from "react-spinners/ClipLoader";
 import { AuthContext } from "./context/authContext/AuthContext";
 import Video from "./page/video/Video";
 import VideosList from "./page/videoList/VideosList";
+import NewVideo from "./page/newVideo/NewVideo";
+import ListList from "./page/listList/ListList";
+import List from "./page/list/List";
 
 const override: CSSProperties = {
   display: "block",
@@ -66,7 +68,13 @@ function App() {
                           path="/videos/:videoId"
                           element={<Video />}
                         />
-                        <Route path="/newProduct" element={<NewProduct />} />
+                        <Route path="/newVideo" element={<NewVideo />} />
+                        <Route path="/lists" element={<ListList />} />
+                        <Route
+                          path="/lists/:listId"
+                          element={<List />}
+                        />
+                        <Route path="/newList" element={<NewVideo />} />
                       </Routes>
                     </Suspense>
                   </div>

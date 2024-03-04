@@ -14,6 +14,7 @@ import {
   WorkOutline,
   Report,
   PlayCircleOutline,
+  List,
 } from "@mui/icons-material";
 
 const Sidebar: React.FC = () => {
@@ -54,10 +55,12 @@ const Sidebar: React.FC = () => {
                 Videos
               </li>
             </Link>
-            <li className={classes.sidebarListItem}>
-              <AttachMoney className={classes.sidebarIcon} />
-              Transactions
-            </li>
+            <Link to="/lists" className={classes.link}>
+              <li className={classes.sidebarListItem}>
+                <List className={classes.sidebarIcon} />
+                Lists
+              </li>
+            </Link>
             <li className={classes.sidebarListItem}>
               <BarChart className={classes.sidebarIcon} />
               Reports

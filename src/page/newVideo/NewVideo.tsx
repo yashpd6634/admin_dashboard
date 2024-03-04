@@ -1,11 +1,11 @@
 import React, { useContext, useState } from "react";
-import classes from "./NewProduct.module.css";
+import classes from "./NewVideo.module.css";
 import storage from "../../firebase";
 import { createVideo } from "../../context/videoContext/ApiCalls";
 import { VideosContext } from "../../context/videoContext/videoContext";
 import { VideoOutput } from "../../context/videoContext/videoActions";
 
-const NewProduct = () => {
+const NewVideo = () => {
   const [videoObj, setVideoObj] = useState<VideoOutput>({} as VideoOutput);
   const [imgFeatured, setImgFeatured] = useState<any>(null);
   const [imgTitle, setImgTitle] = useState<any>(null);
@@ -200,4 +200,4 @@ const NewProduct = () => {
   );
 };
 
-export default NewProduct;
+export default NewVideo;
