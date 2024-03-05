@@ -20,23 +20,23 @@ export const deleteListsFailure = () => ({
   type: "DELETE_LISTS_FAILURE",
 });
 
-// export const createVideoStart = () => ({
-//   type: "CREATE_VIDEO_START",
-// });
-// export const createVideoSuccess = (video: VideoOutput) => ({
-//   type: "CREAT_VIDEO_SUCCESS",
-//   payload: video,
-// });
-// export const createVideoFailure = () => ({
-//   type: "CREAT_VIDEO_FAILURE",
-// });
-// export const updateVideoStart = () => ({
-//   type: "UPDATE_VIDEO_START",
-// });
-// export const updateVideoSuccess = (video: VideoOutput) => ({
-//   type: "UPDATE_VIDEO_SUCCESS",
-//   payload: video,
-// });
-// export const updateVideoFailure = () => ({
-//   type: "UPDATE_VIDEO_FAILURE",
-// });
+export const createListStart = () => ({
+  type: "CREATE_LIST_START",
+});
+export const createListSuccess = (list: any) => ({
+  type: "CREATE_LIST_SUCCESS",
+  payload: list,
+});
+export const createListFailure = () => ({
+  type: "CREATE_LIST_FAILURE",
+});
+export const updateListStart = () => ({
+  type: "UPDATE_LIST_START",
+});
+export const updateListSuccess = (list: any) => ({
+  type: "UPDATE_LIST_SUCCESS",
+  payload: list,
+});
+export const updateListFailure = () => ({
+  type: "UPDATE_LIST_FAILURE",
+});

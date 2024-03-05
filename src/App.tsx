@@ -20,6 +20,7 @@ import VideosList from "./page/videoList/VideosList";
 import NewVideo from "./page/newVideo/NewVideo";
 import ListList from "./page/listList/ListList";
 import List from "./page/list/List";
+import NewList from "./page/newList/NewList";
 
 const override: CSSProperties = {
   display: "block",
@@ -74,7 +75,7 @@ function App() {
                           path="/lists/:listId"
                           element={<List />}
                         />
-                        <Route path="/newList" element={<NewVideo />} />
+                        <Route path="/newList" element={<NewList />} />
                       </Routes>
                     </Suspense>
                   </div>

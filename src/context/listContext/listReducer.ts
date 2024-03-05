@@ -28,47 +28,46 @@ export const ListReducer: Reducer<any, ActionType> = (
         isFetching: false,
         error: true,
       };
-    //   case "CREATE_VIDEO_START":
-    //     return {
-    //       ...state,
-    //       isFetching: true,
-    //       error: false,
-    //     };
-    //   case "CREATE_VIDEO_SUCCESS":
-    //     return {
-    //        lists: [...(state  lists || []), action.payload as VideoOutput],
-    //       isFetching: false,
-    //       error: false,
-    //     };
-    //   case "CREATE_VIDEO_FAILURE":
-    //     return {
-    //       ...state,
-    //       isFetching: false,
-    //       error: true,
-    //     };
-    //   case "UPDATE_VIDEO_START":
-    //     return {
-    //       ...state,
-    //       isFetching: true,
-    //       error: false,
-    //     };
-    //   case "UPDATE_VIDEO_SUCCESS":
-    //     return {
-    //        lists: state lists?.map((video) =>
-    //         typeof action.payload === "object" &&
-    //         video._id === (action.payload as VideoOutput)._id
-    //           ? (action.payload as VideoOutput)
-    //           : video
-    //       ),
-    //       isFetching: false,
-    //       error: false,
-    //     };
-    //   case "UPDATE_VIDEO_FAILURE":
-    //     return {
-    //       ...state,
-    //       isFetching: false,
-    //       error: true,
-    //     };
+    case "CREATE_LIST_START":
+      return {
+        ...state,
+        isFetching: true,
+        error: false,
+      };
+    case "CREATE_LIST_SUCCESS":
+      return {
+        lists: [...(state.list || []), action.payload],
+        isFetching: false,
+        error: false,
+      };
+    case "CREATE_LIST_FAILURE":
+      return {
+        ...state,
+        isFetching: false,
+        error: true,
+      };
+    case "UPDATE_LIST_START":
+      return {
+        ...state,
+        isFetching: true,
+        error: false,
+      };
+    case "UPDATE_LIST_SUCCESS":
+      return {
+        lists: state.lists?.map((list: any) =>
+          typeof action.payload === "object" && list._id === action.payload._id
+            ? action.payload
+            : list
+        ),
+        isFetching: false,
+        error: false,
+      };
+    case "UPDATE_VIDEO_FAILURE":
+      return {
+        ...state,
+        isFetching: false,
+        error: true,
+      };
     case "DELETE_LISTS_START":
       return {
         ...state,
